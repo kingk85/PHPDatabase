@@ -1,5 +1,7 @@
 <?php
 
+namespace kingk85;
+
 class Database {
 
   // DATABASE PARAMETERS
