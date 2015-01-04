@@ -83,6 +83,17 @@ class Database {
         $header.="\n";
         return $header . $rows;
     }
+	
+	public function get_all_values($query)
+   {
+       $result = $this->ExecuteWR($query);
+       $values = array();
+       while($row = mysql_fetch_array($result))
+       {
+           $values[] = $this->get_all_row_values($row);
+       }
+       return $values;
+   }
 
     public function get_all_row_values($row) {
         $values = array();
